@@ -1,0 +1,15 @@
+version : '3'
+
+services:
+  sqlite_backup:
+    name: sqlite_backup
+    restart: always
+    build: .
+    volumes:
+      - ./mydatabase.db:/sqlite.db
+      - ./ssh:/ssh
+    environment:
+      - SQLITE_DB=/sqlite.db
+      - RUN_AT_STARTUP=1
+      - BORG_REPO=your@repo:test
+      - BORG_PASSPHRASE=changeme1312

@@ -1,0 +1,2 @@
+00 05 * * * /backup.sh >> /dev/stdout 2>&1
+# crontab requires an empty line at the end of the file
